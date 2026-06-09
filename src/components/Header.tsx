@@ -24,15 +24,18 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-dh-bg/90 backdrop-blur-xl border-b border-white/5 py-4" : "py-6"
+          scrolled ? "bg-dh-bg/80 backdrop-blur-xl border-b border-white/5 py-4" : "py-6"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <Link href="/" className="group flex flex-col">
-            <span className="font-display text-xl md:text-2xl font-bold tracking-tight group-hover:text-dh-gold transition-colors">
+            <motion.span
+              className="font-display text-xl md:text-2xl font-bold tracking-tight group-hover:text-dh-gold transition-colors"
+              whileHover={{ letterSpacing: "0.05em" }}
+            >
               Design House
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-dh-muted">Global</span>
+            </motion.span>
+            <span className="text-[10px] uppercase tracking-[0.3em] text-dh-muted font-art italic">Global</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
@@ -40,68 +43,88 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm text-dh-muted hover:text-dh-cream transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-dh-gold hover:after:w-full after:transition-all"
+                className="text-sm text-dh-muted hover:text-dh-cream transition-colors relative group"
               >
                 {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-dh-gold group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
-            <Link
-              href="/iletisim"
-              className="ml-4 px-5 py-2.5 bg-dh-gold text-dh-bg text-sm font-medium rounded-full hover:bg-dh-cream transition-colors"
-            >
-              Başvuru Yap
-            </Link>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="/iletisim"
+                className="ml-4 px-5 py-2.5 bg-dh-gold text-dh-bg text-sm font-medium rounded-full hover:bg-dh-cream transition-colors"
+              >
+                Başvuru Yap
+              </Link>
+            </motion.div>
           </nav>
 
-          <button
+          <motion.button
             onClick={() => setOpen(true)}
             className="lg:hidden flex flex-col gap-1.5 p-2"
             aria-label="Menüyü aç"
+            whileTap={{ scale: 0.9 }}
           >
-            <span className="w-6 h-px bg-dh-cream" />
-            <span className="w-4 h-px bg-dh-cream ml-auto" />
-          </button>
+            <motion.span className="w-6 h-px bg-dh-cream" animate={open ? { rotate: 45 } : {}} />
+            <motion.span className="w-4 h-px bg-dh-cream ml-auto" />
+          </motion.button>
         </div>
       </header>
 
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ clipPath: "circle(0% at 100% 0%)" }}
+            animate={{ clipPath: "circle(150% at 100% 0%)" }}
+            exit={{ clipPath: "circle(0% at 100% 0%)" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[100] bg-dh-bg"
           >
-            <div className="flex flex-col h-full p-6">
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-dh-gold/20 blur-3xl blob-morph" />
+              <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-dh-coral/15 blur-3xl blob-morph-2" />
+            </div>
+            <div className="flex flex-col h-full p-6 relative">
               <div className="flex justify-between items-center mb-12">
                 <span className="font-display text-2xl font-bold">{site.name}</span>
-                <button
+                <motion.button
                   onClick={() => setOpen(false)}
-                  className="text-3xl text-dh-muted hover:text-dh-cream transition-colors"
+                  className="text-3xl text-dh-muted hover:text-dh-cream transition-colors w-12 h-12 flex items-center justify-center border border-white/10 rounded-full"
                   aria-label="Menüyü kapat"
+                  whileHover={{ rotate: 90 }}
                 >
                   ✕
-                </button>
+                </motion.button>
               </div>
-              <nav className="flex flex-col gap-2 flex-1">
+              <nav className="flex flex-col gap-1 flex-1">
                 {nav.map((item, i) => (
                   <motion.div
                     key={item.href}
-                    initial={{ opacity: 0, x: -40 }}
+                    initial={{ opacity: 0, x: -60 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
+                    exit={{ opacity: 0, x: -30 }}
+                    transition={{ delay: i * 0.04, duration: 0.5 }}
                   >
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="block py-3 text-3xl md:text-5xl font-display font-bold hover:text-dh-gold transition-colors"
+                      className="block py-3 text-3xl md:text-5xl font-display font-bold hover:text-dh-gold transition-colors group"
                     >
-                      {item.label}
+                      <span className="inline-block group-hover:translate-x-4 transition-transform duration-300">
+                        {item.label}
+                      </span>
                     </Link>
                   </motion.div>
                 ))}
               </nav>
-              <p className="text-dh-muted text-sm">{site.email}</p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="text-dh-muted text-sm font-art italic"
+              >
+                {site.email}
+              </motion.p>
             </div>
           </motion.div>
         )}

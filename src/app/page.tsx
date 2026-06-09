@@ -6,26 +6,30 @@ import PortfolioSection from "@/components/PortfolioSection";
 import TechPreview from "@/components/TechPreview";
 import AbroadSection from "@/components/AbroadSection";
 import ArtTherapySection from "@/components/ArtTherapySection";
-import StudentWorks from "@/components/StudentWorks";
+import HorizontalScroll from "@/components/HorizontalScroll";
 import BlogSection from "@/components/BlogSection";
 import Testimonials from "@/components/Testimonials";
 import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
+import InkDivider from "@/components/InkDivider";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Marquee />
+      <Marquee artistic />
+      <InkDivider variant="gold" />
       <AboutPreview />
       <Stats />
       <Marquee reverse />
+      <InkDivider variant="coral" />
       <ProgramGrid />
       <PortfolioSection />
+      <InkDivider variant="sage" />
       <TechPreview />
       <AbroadSection />
       <ArtTherapySection />
-      <StudentWorks />
+      <HorizontalScroll />
       <BlogSection />
       <Testimonials />
       <CTA />
