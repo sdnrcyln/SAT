@@ -36,7 +36,7 @@ export default function Home() {
               <p className="mb-6 max-w-xl text-sm uppercase tracking-[0.35em] text-dh-gold">
                 Design House İçerik Akışı
               </p>
-              <h1 className="max-w-6xl font-display text-[16vw] font-black uppercase leading-[0.78] tracking-[-0.09em] md:text-[12vw] lg:text-[9.2rem]">
+              <h1 className="max-w-6xl font-display text-[16vw] font-black uppercase leading-[0.78] tracking-[-0.09em] md:text-[11vw] lg:text-[7.4rem] xl:text-[8.2rem]">
                 Sanat ve tasarımda global rehberlik.
               </h1>
             </div>
@@ -112,7 +112,7 @@ export default function Home() {
           <p className="mb-8 text-sm font-bold uppercase tracking-[0.35em] text-dh-bg/60">Birincil hedef kitle</p>
           <div className="grid gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
             {audienceGroups.map((group) => (
-              <div key={group} className="border-t border-dh-bg/20 pt-4 font-display text-2xl font-black uppercase leading-none tracking-[-0.04em]">
+              <div key={group} className="border-t border-dh-bg/20 pt-4 font-display text-xl font-black uppercase leading-[1.02] tracking-[-0.04em] md:text-2xl">
                 {group}
               </div>
             ))}
