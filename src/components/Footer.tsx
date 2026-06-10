@@ -4,20 +4,22 @@ import { nav, site } from "@/lib/content";
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-dh-surface pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-12 mb-16">
+      <div className="mx-auto max-w-[1600px] px-5 md:px-8">
+        <div className="mb-16 grid gap-12 lg:grid-cols-[1.3fr_0.8fr_0.9fr]">
           <div>
-            <h3 className="font-display text-3xl font-bold mb-4">Design House Global</h3>
-            <p className="text-dh-muted leading-relaxed max-w-sm">
+            <h3 className="mb-6 font-display text-6xl font-black uppercase leading-[0.8] tracking-[-0.08em] md:text-8xl">
+              Design House Global
+            </h3>
+            <p className="max-w-xl text-lg leading-relaxed text-dh-muted">
               Güvenilir, profesyonel ve uluslararası bakış açısına sahip sanat ve tasarım eğitim platformu.
             </p>
           </div>
           <div>
-            <h4 className="text-sm uppercase tracking-widest text-dh-gold mb-6">Sayfalar</h4>
-            <ul className="space-y-3">
+            <h4 className="mb-6 text-sm uppercase tracking-[0.35em] text-dh-gold">Sayfalar</h4>
+            <ul className="space-y-2">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-dh-muted hover:text-dh-cream transition-colors text-sm">
+                  <Link href={item.href} className="font-display text-xl font-black uppercase tracking-[-0.04em] text-dh-muted transition-colors hover:text-dh-cream">
                     {item.label}
                   </Link>
                 </li>
@@ -25,22 +27,22 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-sm uppercase tracking-widest text-dh-gold mb-6">İletişim</h4>
-            <ul className="space-y-3 text-sm text-dh-muted">
+            <h4 className="mb-6 text-sm uppercase tracking-[0.35em] text-dh-gold">İletişim</h4>
+            <ul className="space-y-3 text-sm uppercase tracking-[0.14em] text-dh-muted">
               <li>{site.email}</li>
               <li>{site.phone}</li>
               <li>{site.address}</li>
             </ul>
             <div className="flex gap-4 mt-6">
               {["Instagram", "LinkedIn", "YouTube"].map((s) => (
-                <a key={s} href="#" className="text-xs uppercase tracking-wider text-dh-muted hover:text-dh-gold transition-colors">
+                <a key={s} href="#" className="rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-wider text-dh-muted transition-colors hover:border-dh-gold hover:text-dh-gold">
                   {s}
                 </a>
               ))}
             </div>
           </div>
         </div>
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between gap-4 text-xs text-dh-muted">
+        <div className="flex flex-col justify-between gap-4 border-t border-white/10 pt-8 text-xs uppercase tracking-[0.18em] text-dh-muted md:flex-row">
           <p>© 2026 Design House Global. Tüm hakları saklıdır.</p>
           <p>Sanat · Tasarım · Yaratıcılık · Global Eğitim</p>
         </div>
