@@ -112,7 +112,7 @@ export const studentWorks = [
   {
     student: "Elif K.",
     program: "Mimarlık — RCA Kabul",
-    image: "https://images.unsplash.com/photo-1505843513577-22bb7d230e8b?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&q=80",
   },
   {
     student: "Can M.",
