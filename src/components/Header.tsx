@@ -23,50 +23,62 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-dh-bg/80 backdrop-blur-xl border-b border-white/5 py-4" : "py-6"
+        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
+          scrolled ? "py-3" : "py-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <Link href="/" className="group flex flex-col">
+        <div className="mx-auto flex max-w-[1600px] items-center justify-between px-5 md:px-8">
+          <Link href="/" className="group flex items-center gap-3">
+            <span className="grid h-10 w-10 place-items-center rounded-full bg-dh-cream text-sm font-black text-dh-bg transition group-hover:bg-dh-gold">
+              DH
+            </span>
+            <span className="flex flex-col leading-none">
             <motion.span
-              className="font-display text-xl md:text-2xl font-bold tracking-tight group-hover:text-dh-gold transition-colors"
+              className="font-display text-lg font-black uppercase tracking-[-0.04em] transition-colors group-hover:text-dh-gold md:text-xl"
               whileHover={{ letterSpacing: "0.05em" }}
             >
               Design House
             </motion.span>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-dh-muted font-art italic">Global</span>
+              <span className="text-[10px] uppercase tracking-[0.35em] text-dh-muted">Global</span>
+            </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-6">
-            {nav.slice(1, 6).map((item) => (
+          <nav className="hidden items-center gap-2 rounded-full border border-white/10 bg-dh-bg/70 p-1.5 backdrop-blur-xl lg:flex">
+            {nav.slice(1, 7).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm text-dh-muted hover:text-dh-cream transition-colors relative group"
+                className="rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-dh-muted transition hover:bg-white/10 hover:text-dh-cream"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-dh-gold group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
+          </nav>
+
+          <nav className="hidden items-center gap-3 lg:flex">
+            <Link
+              href="/blog"
+              className="rounded-full border border-white/10 bg-dh-bg/70 px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-dh-muted backdrop-blur-xl transition hover:border-dh-gold hover:text-dh-gold"
+            >
+              Kaynaklar
+            </Link>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/iletisim"
-                className="ml-4 px-5 py-2.5 bg-dh-gold text-dh-bg text-sm font-medium rounded-full hover:bg-dh-cream transition-colors"
+                className="rounded-full bg-dh-cream px-5 py-3 text-xs font-black uppercase tracking-[0.14em] text-dh-bg transition-colors hover:bg-dh-gold"
               >
-                Başvuru Yap
+                Başvuru
               </Link>
             </motion.div>
           </nav>
 
           <motion.button
             onClick={() => setOpen(true)}
-            className="lg:hidden flex flex-col gap-1.5 p-2"
+            className="flex rounded-full border border-white/10 bg-dh-bg/70 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] backdrop-blur-xl lg:hidden"
             aria-label="Menüyü aç"
             whileTap={{ scale: 0.9 }}
           >
-            <motion.span className="w-6 h-px bg-dh-cream" animate={open ? { rotate: 45 } : {}} />
-            <motion.span className="w-4 h-px bg-dh-cream ml-auto" />
+            Menü
           </motion.button>
         </div>
       </header>
@@ -86,10 +98,10 @@ export default function Header() {
             </div>
             <div className="flex flex-col h-full p-6 relative">
               <div className="flex justify-between items-center mb-12">
-                <span className="font-display text-2xl font-bold">{site.name}</span>
+                <span className="font-display text-2xl font-black uppercase tracking-[-0.05em]">{site.name}</span>
                 <motion.button
                   onClick={() => setOpen(false)}
-                  className="text-3xl text-dh-muted hover:text-dh-cream transition-colors w-12 h-12 flex items-center justify-center border border-white/10 rounded-full"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-3xl text-dh-muted transition-colors hover:text-dh-cream"
                   aria-label="Menüyü kapat"
                   whileHover={{ rotate: 90 }}
                 >
@@ -108,7 +120,7 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="block py-3 text-3xl md:text-5xl font-display font-bold hover:text-dh-gold transition-colors group"
+                    className="group block py-3 font-display text-3xl font-black uppercase tracking-[-0.06em] transition-colors hover:text-dh-gold md:text-5xl"
                     >
                       <span className="inline-block group-hover:translate-x-4 transition-transform duration-300">
                         {item.label}

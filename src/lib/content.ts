@@ -112,7 +112,7 @@ export const studentWorks = [
   {
     student: "Elif K.",
     program: "Mimarlık — RCA Kabul",
-    image: "https://images.unsplash.com/photo-1505843513577-22bb7d230e8b?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&q=80",
   },
   {
     student: "Can M.",
@@ -150,6 +150,90 @@ export const marqueeWords = [
   "3D MODELLEME",
   "SANAT TERAPİSİ",
   "GLOBAL",
+];
+
+export const homeStats = [
+  { value: "15+ yıl", label: "akademik deneyim" },
+  { value: "2.500+", label: "öğrenci ve danışan" },
+  { value: "40+ ülke", label: "okul ve kabul ağı" },
+  { value: "98%", label: "başvuru başarı oranı" },
+];
+
+export const homeFlow = [
+  "Ana Banner",
+  "Design House Hakkında",
+  "Öne Çıkan Eğitim ve Atölyeler",
+  "Portfolyo Hazırlık Programları",
+  "Sanat ve Tasarım Bölümleri",
+  "Yurtdışı Sanat ve Tasarım Okulları",
+  "3D Modelleme ve Baskı Teknolojileri",
+  "Sanat Terapisi ve Yaratıcılık Çalışmaları",
+  "Öğrenci Çalışmaları ve Başarı Hikayeleri",
+  "Blog Yazıları",
+  "İletişim ve Başvuru",
+];
+
+export const homeProjectCards = [
+  {
+    kicker: "Sanat Atölyeleri",
+    title: "Mimarlık ve tasarım stüdyolarında üretim odaklı öğrenme",
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=80",
+    href: "/egitim-programlari#sanat",
+  },
+  {
+    kicker: "Portfolyo Merkezi",
+    title: "Lisans, yüksek lisans, mülakat ve burs başvuruları için rehberlik",
+    image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=900&q=80",
+    href: "/portfolyo",
+  },
+  {
+    kicker: "Teknoloji & Üretim",
+    title: "3D modelleme, dijital tasarım araçları ve baskı süreçleri",
+    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=900&q=80",
+    href: "/teknoloji",
+  },
+  {
+    kicker: "Sanat Terapisi",
+    title: "Çocuk, genç ve grup çalışmaları için güvenli yaratıcı alanlar",
+    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80",
+    href: "/sanat-terapisi",
+  },
+];
+
+export const capabilitySections = [
+  {
+    eyebrow: "design",
+    metric: "09",
+    title: "Sanat ve tasarım bölümlerinde güçlü akademik yönelim",
+    body: "Grafik tasarım, mimarlık, iç mimarlık, endüstriyel tasarım, ürün tasarımı, dijital tasarım ve design management alanlarında hedefe göre yapılandırılmış eğitim akışları sunuyoruz.",
+  },
+  {
+    eyebrow: "portfolio",
+    metric: "05",
+    title: "Portfolyo hazırlığında başvuru odaklı strateji",
+    body: "Lisans ve yüksek lisans başvurularını, portfolyo danışmanlığını, mülakat hazırlığını ve burs dosyalarını tek bir yaratıcı sistem içinde planlıyoruz.",
+  },
+  {
+    eyebrow: "global",
+    metric: "40+",
+    title: "Yurtdışı sanat ve tasarım okullarına uluslararası bakış",
+    body: "Üniversiteler, bölümler, kabul koşulları ve öğrenci yerleşimleri için Türkiye'den Avrupa, Kuzey Amerika, Orta Doğu ve Birleşik Krallık'a uzanan kapsamlı rehberlik sağlıyoruz.",
+  },
+  {
+    eyebrow: "therapy",
+    metric: "04",
+    title: "Sanat terapisi ve yaratıcılık çalışmalarıyla gelişim desteği",
+    body: "Dışavurumcu sanat terapisi, çocuk ve genç programları, grup çalışmaları ve yaratıcılık geliştirme programlarıyla öğrenme deneyimini psikolojik güvenle destekliyoruz.",
+  },
+];
+
+export const audienceGroups = [
+  "Ortaokul, lise ve üniversite öğrencileri",
+  "Yüksek lisans, doktora ve MBA adayları",
+  "Uluslararası eğitim fırsatı arayan öğrenciler",
+  "Çocuklarının kariyer sürecine destek arayan aileler",
+  "Kariyer planlama ve yetenek analizi isteyen profesyoneller",
+  "Türkiye, Avrupa, Kuzey Amerika, Orta Doğu ve Birleşik Krallık kullanıcıları",
 ];
 
 export const aboutSections = [
